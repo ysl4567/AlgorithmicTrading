@@ -13,7 +13,7 @@ datapane
 
 
 
-Type commands below to install necessary software
+Type commands below to install necessary software (one by one)
 
 pip install numpy
 pip install pandas
