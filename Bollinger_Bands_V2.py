@@ -70,4 +70,7 @@ plt.scatter(voo.iloc[buy_point].index, voo.iloc[buy_point].Close, marker = '^', 
 plt.scatter(voo.iloc[sell_point].index, voo.iloc[sell_point].Close, marker = '^', color = 'red') #sell - select
 plt.show()
 
+all_buy_and_sell = pd.concat([voo.iloc[buy_point].Close, voo.iloc[sell_point].Close], axis = 1)
+print (all_buy_and_sell)
+
 
