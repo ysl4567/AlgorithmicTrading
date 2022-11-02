@@ -22,7 +22,7 @@ pip install datapane
 
 File Descriptions
 
-Bolling_Band_V1.py
+Bolling_Bands_V1.py
 
 
 
