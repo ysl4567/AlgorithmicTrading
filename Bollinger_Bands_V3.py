@@ -15,14 +15,14 @@ import datapane as dp
 
 #ticker input
 #for input, change 'VOO' to ticker_input
-#ticker_input = input("Please enter ticker value (w/o $ symbol): ")
+ticker_input = input("Please enter ticker value (w/o $ symbol): ")
 
 #VOO Graph for 
-voo = yf.Ticker('BAC')
+voo = yf.Ticker(ticker_input)
 print(voo.history(period="18mo"))
 
 #Graph VOO Closing price for the past 18 months
-voo = yf.download('BAC', period='18mo', Interval='1d') #print everyday on the graph - plotly.express
+voo = yf.download(ticker_input, period='18mo', Interval='1d') #print everyday on the graph - plotly.express
 voo_price_chart = px.line(voo['Close'],title= 'VOO' + ' Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 voo_price_chart.show()
 
@@ -88,7 +88,7 @@ for x in range(minimum_length):
 
 #Graph with Matplotlib - select
 #plt.plot(voo[['Close', 'MID', 'UPPER', 'LOWER']])
-voo[['Close', 'MID', 'UPPER', 'LOWER']].plot(label = 'BAC', figsize=(20,10))
+voo[['Close', 'MID', 'UPPER', 'LOWER']].plot(label = ticker_input, figsize=(20,10))
 plt.fill_between(voo.index, voo.UPPER, voo.LOWER, color = 'grey', alpha=0.3)
 plt.scatter(voo.iloc[buy_point_2].index, voo.iloc[buy_point_2].Close, marker = '^', color = 'green') #buy     -- Date Since start, Close Value 
 #INDEX OF BUY_POINT_2 AND BUY_POINT MUST BE THE SAME
