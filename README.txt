@@ -1,5 +1,6 @@
-Install:
+Code written in Visual Studio Code Python
 
+Install:
 numpy
 pandas
 matplotlib
@@ -9,7 +10,7 @@ plotly
 datapane
 
 
-Type commands below to install necessary software (one by one)
+Type commands below in python to install necessary software (one by one)
 pip install numpy
 pip install pandas
 pip install matplotlib
