@@ -45,6 +45,18 @@ Bollinger_Bands_V4.py
  - Still a work in progress
  - Won't work for all stocks
  
+ 
+ 2. Simple Moving Average (SMA)
+ 
+ 3. Cumulative Moving Average (CMA)
+ 
+ 4. Exponential Moving Average (EMA)
+ 
+ 5. Moving Average Convergence Divergence (MACD)
+ 
+ 
+ Next Steps: 
+ 
 
 
 
