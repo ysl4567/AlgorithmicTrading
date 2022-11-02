@@ -47,10 +47,11 @@ print (voo)
 #graph when to buy and sell
 sell_point = []
 buy_point = []
+minimum_length = min(len(sell_point),len(buy_point))
 x = -1
 bought = False
 #set up for loop to check for all avlues in voo range.
-for dates in range(len(voo)):
+for dates in range(minimum_length):
     if voo['LOWER'][dates] > voo['Close'][dates]: #buy
         if bought == False:
             buy_point.append(dates)
@@ -69,6 +70,7 @@ plt.fill_between(voo.index, voo.UPPER, voo.LOWER, color = 'grey', alpha = 0.3)
 plt.scatter(voo.iloc[buy_point].index, voo.iloc[buy_point].Close, marker = '^', color = 'green') #buy - select
 plt.scatter(voo.iloc[sell_point].index, voo.iloc[sell_point].Close, marker = '^', color = 'red') #sell - select
 plt.show()
+
 
 all_buy_and_sell = pd.concat([voo.iloc[buy_point].Close, voo.iloc[sell_point].Close], axis = 1)
 print (all_buy_and_sell)
