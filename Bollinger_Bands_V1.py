@@ -71,3 +71,8 @@ plt.scatter(voo.index[voo.SELL], voo[voo.SELL].Close, marker = '^', color = 'red
 plt.show()
 
 
+all_buy_and_sell = pd.concat([voo[voo.BUY].Close, voo[voo.SELL].Close], axis = 1)
+print (all_buy_and_sell)
+
+
+
