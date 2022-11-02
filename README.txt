@@ -48,6 +48,9 @@ Bollinger_Bands_V4.py
  
  2. Simple Moving Average (SMA)
  
+ Simple_Moving_Average_V1.py
+  - Goal: 
+ 
  3. Cumulative Moving Average (CMA)
  
  4. Exponential Moving Average (EMA)
@@ -55,8 +58,11 @@ Bollinger_Bands_V4.py
  5. Moving Average Convergence Divergence (MACD)
  
  
- Next Steps: 
+ Currently working on: 
  
+Combining all technical analyses explored to produce a more accurate and optimal alternating buy trade signal graph. 
 
+Next step:
+Create a stock price predictor using neural networks and machine learning.
 
 
