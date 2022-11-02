@@ -10,9 +10,6 @@ plotly
 datapane
 
 
-
-
-
 Type commands below to install necessary software (one by one)
 
 pip install numpy
@@ -22,6 +19,10 @@ pip intstall yfinance
 pip install seaborn
 pip install plotly
 pip install datapane
+
+File Descriptions
+
+Bolling_Band_V1.py
 
 
 
