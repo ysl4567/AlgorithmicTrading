@@ -14,16 +14,16 @@ import datapane as dp
 #Lower Band = Middle Band - (2 * 20 standard deviation of close price)
 
 #ticker input
-#for input, change 'VOO' to ticker_input
-#ticker_input = input("Please enter ticker value (w/o $ symbol): ")
+#for input, change 'VOO' to ticker_input and vice versa
+ticker_input = input("Please enter ticker value (w/o $ symbol): ")
 
 #VOO Graph for 
-voo = yf.Ticker('BAC')
+voo = yf.Ticker(ticker_input)
 print(voo.history(period="18mo"))
 
 #Graph VOO Closing price for the past 18 months
-voo = yf.download('BAC', period='18mo', Interval='1d') #print everyday on the graph - plotly.express
-voo_price_chart = px.line(voo['Close'],title= 'BAC' + ' Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
+voo = yf.download(ticker_input , period='18mo', Interval='1d') #print everyday on the graph - plotly.express
+voo_price_chart = px.line(voo['Close'],title= ticker_input + ' Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 voo_price_chart.show()
 
 #Middle Band - 20 Day Simple Moving Average
@@ -62,7 +62,7 @@ for dates in range(len(voo)):
             
 #Graph with Matplotlib 
 #plt.plot(voo[['Close', 'MID', 'UPPER', 'LOWER']])
-voo[['Close', 'MID', 'UPPER', 'LOWER']].plot(label =  'BAC', figsize=(20,10))
+voo[['Close', 'MID', 'UPPER', 'LOWER']].plot(label =  ticker_input, figsize=(20,10))
 plt.fill_between(voo.index, voo.UPPER, voo.LOWER, color = 'grey', alpha = 0.3)
 plt.scatter(voo.index[voo.BUY], voo[voo.BUY].Close, marker = '^', color = 'green') #buy -all
 plt.scatter(voo.index[voo.SELL], voo[voo.SELL].Close, marker = '^', color = 'red') #buy -all
