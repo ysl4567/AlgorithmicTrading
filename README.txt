@@ -36,12 +36,12 @@ Bollinger_Bands_V2.py
  - Output represents the possible sell and buy points assuming user is alternating buying and selling.
 
 Bollinger_Bands_V3.py
- - Goal: Non-alternating buy and sell points with all being profitable. 
- - Input any ticker symbol (ex. TQQQ, CAT) without the $ symbol.
- - This code eliminates the loss seen when there is a sharp decrease in the value of the stock as shown in V2. 
+ - Goal: Non-alternating buy and sell points with all being profitable
+ - Input any ticker symbol (ex. TQQQ, CAT) without the $ symbol
+ - This code eliminates the loss seen when there is a sharp decrease in the value of the stock as shown in V2
 
 Bollinger_Bands_V4.py
- - Goal: Alternating buy and sell points with all being profitable. 
+ - Goal: Alternating buy and sell points with all being profitable
  - Input any ticker symbol (ex. TQQQ, CAT) without the $ symbol 
  - Still a work in progress
  - Won't work for all stocks
@@ -50,33 +50,34 @@ Bollinger_Bands_V4.py
  2. Simple Moving Average (SMA)
  
  Simple_Moving_Average_V1.py
-  - Goal: All possible buy and sell points based on Simple Moving Average Definition
-  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol.
-  - Outputs are widely inaccurate. 
+  - Goal: Alternating buy and sell points with no guarantee that all are profitable
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
+  - Outputs for BAC and OXY are not net profitable and similar when compared to SMA
+  - Outputs are widely inaccurate.
+  - BAC, 36 month period: Net Gain: $-36.20
+  - OXY, 36 month period: Net Gain: $-71.09
   
  Simple_Moving_average_V2.py
   -
- 
- 3. Cumulative Moving Average (CMA)
- 
- Cumulative_Moving_Average_V1.py
-  -
- 
- Cumulative_Moving_Average_V2.py
-  -
- 
- 4. Exponential Moving Average (EMA)
+  
+ 3. Exponential Moving Average (EMA)
  
  Exponential_Moving_Average_V1.py
-  -
+  - Goal: Alternating buy and sell points with no guarantee that all are profitable
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
+  - Outputs for BAC and OXY are not net profitable and similar when compared to SMA
+  - BAC, 36 month period: Net Gain: $-35.70
+  - OXY, 36 month period: Net Gain: $-70.50
  
  Exponential_Moving_Average_V2.py
-  -
+  - 
  
- 5. Moving Average Convergence Divergence (MACD)
+ 4. Moving Average Convergence Divergence (MACD)
  
  Moving_Average_Convergence_Divergence_V1.py
-  -
+  - Goal: Alternating buy and sell points with no guarantee that all are profitable
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
+  
  
  Moving_Average_Convergence_Divergence_V2.py
   -
