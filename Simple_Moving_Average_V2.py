@@ -17,10 +17,10 @@ ticker_input = input("Enter ticker without the $ symbol: ")
 
 #input any stock ticker
 alb = yf.Ticker(ticker_input)
-print(alb.history(period="36mo"))
+print(alb.history(period="24mo"))
 
 #Graph ALB Closing price for the past 18 months
-alb = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
+alb = yf.download(ticker_input, period='24mo', Interval='1d') #print everyday on the graph 
 alb_price_chart = px.line(alb['Close'],title='Albemarle Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 alb_price_chart.show()
 
