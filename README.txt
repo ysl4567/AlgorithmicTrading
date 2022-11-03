@@ -50,7 +50,9 @@ Bollinger_Bands_V4.py
  2. Simple Moving Average (SMA)
  
  Simple_Moving_Average_V1.py
-  - Goal: 
+  - Goal: All possible buy and sell points based on Simple Moving Average Definition
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol.
+  - Outputs are widely inaccurate. 
  
  3. Cumulative Moving Average (CMA)
  
