@@ -53,12 +53,33 @@ Bollinger_Bands_V4.py
   - Goal: All possible buy and sell points based on Simple Moving Average Definition
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol.
   - Outputs are widely inaccurate. 
+  
+ Simple_Moving_average_V2.py
+  -
  
  3. Cumulative Moving Average (CMA)
  
+ Cumulative_Moving_Average_V1.py
+  -
+ 
+ Cumulative_Moving_Average_V2.py
+  -
+ 
  4. Exponential Moving Average (EMA)
  
+ Exponential_Moving_Average_V1.py
+  -
+ 
+ Exponential_Moving_Average_V2.py
+  -
+ 
  5. Moving Average Convergence Divergence (MACD)
+ 
+ Moving_Average_Convergence_Divergence_V1.py
+  -
+ 
+ Moving_Average_Convergence_Divergence_V2.py
+  -
  
  
  Currently working on: 
