@@ -20,7 +20,7 @@ alb = yf.Ticker(ticker_input)
 print(alb.history(period="36mo"))
 
 #Graph ALB Closing price for the past 18 months
-alb = yf.download(ticker_input, period='24mo', Interval='1d') #print everyday on the graph 
+alb = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
 alb_price_chart = px.line(alb['Close'],title='Albemarle Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 alb_price_chart.show()
 
@@ -97,8 +97,8 @@ print("2",length_sell_list_new)
 alb[['Close','ALB20', 'ALB50']].plot(label = ticker_input, figsize=(20,10))
 #alb[['Close','ALB50']].plot(label = 'ALB', figsize=(20,10))
 #alb[['Close','ALB100']].plot(label = 'ALB', figsize=(20,10))
-plt.scatter(alb.iloc[buy_list].index, alb.iloc[buy_list].Close, marker = '^', color = 'green') #buy - select
-plt.scatter(alb.iloc[sell_list].index, alb.iloc[sell_list].Close, marker = '^', color = 'red') #sell - select
+plt.scatter(alb.iloc[length_buy_list_new].index, alb.iloc[length_buy_list_new].Close, marker = '^', color = 'green') #buy - select
+plt.scatter(alb.iloc[length_sell_list_new].index, alb.iloc[length_sell_list_new].Close, marker = '^', color = 'red') #sell - select
 plt.show()
 
 
