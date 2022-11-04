@@ -44,56 +44,135 @@ voo['LOWER'] = voo['MID'] - (2*(voo['STDDEV']))
 #Buy - When the closing prices goes above the upper band
 #Sell - When the closing price goes below the lower band 
 #where function - where inequality is true print value, else false don't print value
-sell_value_dates = []
-buy_value_dates = []
-buy_value_close = []
-sell_value_close = []
-for i in range (len(voo)): #all possible sell dates counting from start date
-    if voo['UPPER'][i] < voo['Close'][i]:
-        sell_value_dates.append(i)
-print (sell_value_dates)
-
-for j in range (len(voo)): #all possible buy dates counting from start date
-    if voo['LOWER'][j] > voo['Close'][j]:
-        buy_value_dates.append(j)
-print (buy_value_dates)
-
-for k in range (len(voo)): #all the UPPER close values
-    if voo['UPPER'][k] < voo['Close'][k]:
-        sell_value_close.append(voo['UPPER'][k])
-print (sell_value_close)
-
-for l in range (len(voo)): #all the LOWER close values
-    if voo['LOWER'][l] > voo['Close'][l]:
-        buy_value_close.append(voo['LOWER'][l])
-print (buy_value_close)
-
-
-#------------------------------------------------------------------------------------------------------------------------------------------------------
-sell_point = []
-buy_point = []
-buy_point_2 = []
-sell_point_2 = []
-bought_true_or_false = []
-minimum_length = min(len(sell_value_dates),len(buy_value_dates),len(sell_value_close), len(buy_value_close))
-x = 1
-y = x
+buy_list = []
+sell_list = []
 bought = False
-for x in range(minimum_length):
-        if sell_value_dates[x] > buy_value_dates[x] and sell_value_close[x] > buy_value_close[x] and bought == False:
-                buy_point_2.append(buy_value_dates[x])
-                buy_point.append(buy_value_close[x])
-                bought_true_or_false.append(False)
-                bought = True
-        elif sell_value_dates[x] > buy_value_dates[x] and sell_value_close[x] > buy_value_close[x] and bought == True:
-                sell_point_2.append(sell_value_dates[x])
-                sell_point.append(sell_value_close[x])
-                bought_true_or_false.append(True)
-                bought = False
-
-print(bought_true_or_false)
 
 
+for dates in range(len(voo)):
+    if bought == False and voo['Close'][dates] > voo['UPPER'][dates]:
+        if bought == False:
+            buy_list.append(dates)
+            bought = True
+    elif bought == True and voo['Close'][dates] < voo['LOWER'][dates]:
+        if bought == True:
+            sell_list.append(dates)
+            bought = False
+print ("Buy", buy_list) #days since 
+print ("Sell", sell_list) #days since
+
+
+buy_list_close_value = []
+for close_values in range (len(buy_list)):
+    buy_list_close_value.append(voo.iloc[buy_list[close_values]].Close)
+print ("buy_close", buy_list_close_value)
+
+sell_list_close_value = []
+for close_values_two in range (len(sell_list)):
+    sell_list_close_value.append(voo.iloc[sell_list[close_values_two]].Close)
+print ("sell_close", sell_list_close_value)
+
+print ("BUYBUY", buy_list)
+buy_list_date_value = buy_list 
+print ("buy_date", buy_list_date_value)
+
+print ("SELLSELL", sell_list)
+sell_list_date_value = sell_list
+print ("sell_date", sell_list_date_value)
+
+
+length_buy_date_list = len(buy_list_date_value)
+length_sell_date_list = len (sell_list_date_value)
+length_buy_date_new = []
+length_sell_date_new = []
+
+
+if length_buy_date_list < length_sell_date_list:
+    for o in range (length_buy_date_list):
+        length_buy_date_new.append(buy_list_date_value[o])
+        length_sell_date_new.append(sell_list_date_value[o])
+
+elif length_buy_date_list > length_sell_date_list:
+    for i in range (length_sell_date_list):
+        length_buy_date_new.append(buy_list_date_value[i])
+        length_sell_date_new.append(sell_list_date_value[i])
+
+elif length_buy_date_list == length_sell_date_list:
+    for z in range (length_sell_date_list):
+        length_buy_date_new.append(buy_list_date_value[z])
+        length_sell_date_new.append(sell_list_date_value[z])
+
+
+length_buy_list = len(buy_list_close_value)
+length_sell_list = len(sell_list_close_value)
+length_sell_lits = len(sell_list_close_value)
+length_buy_list_new = []
+length_sell_list_new = []
+
+if length_buy_list > length_sell_list:
+    for l in range (length_sell_list):
+        length_buy_list_new.append(buy_list_close_value[l])
+        length_sell_list_new.append(sell_list_close_value[l])
+elif length_buy_list < length_sell_list:
+    for a in range (length_buy_list):
+        length_buy_list_new.append(buy_list_close_value[a])
+        length_sell_list_new.append(sell_list_close_value[a])
+elif length_buy_list == length_sell_list:
+    for z in range (length_sell_list):
+        length_buy_list_new.append(buy_list_close_value[z])
+        length_sell_list_new.append(sell_list_close_value[z])
+
+
+
+print ("sell_same_length",length_sell_list_new) #same length - 1
+print ("buy_same_length",length_buy_list_new) #same length - 1
+print ("buy_date_same_length", length_buy_date_new) #same length - 2 Dates
+print ("sell_date_same_length", length_sell_date_new) #same length - 2 Dates
+print (len(length_sell_list_new))
+print (len(length_buy_list_new))
+
+y = len(length_buy_list_new)
+x = 0
+
+while True:
+    print("x is", x)
+    if x >= len(length_buy_list_new):
+        break
+
+    if length_buy_list_new[x] > length_sell_list_new[x]:
+        length_buy_list_new.pop(x)
+        length_sell_list_new.pop(x)
+        length_sell_date_new.pop(x)
+        length_buy_date_new.pop(x)
+        
+    else:
+        x = x + 1 # when you keep 
+        
+print("Done!")
+print("sell",length_sell_list_new) #$ value
+print("buy",length_buy_list_new) #$value
+print ("sell date",length_sell_date_new)
+print ("buy date", length_buy_date_new)
+print ("=",voo.iloc[length_buy_date_new].index)
+print ("=",voo.iloc[length_sell_date_new].index)
+print ("=",voo.iloc[length_buy_list_new].index)
+print ("=",voo.iloc[length_sell_list_new].index)
+print ("=",voo.iloc[length_buy_date_new])
+print ("=",voo.iloc[length_sell_list_new].Close)
+
+sell_amount = 0
+for i in range(len(length_sell_list_new)):
+    sell_amount = sell_amount + length_sell_list_new[i]
+print ("Total Money earned from selling: ", sell_amount)
+
+buy_amount = 0
+for i in range(len(length_buy_list_new)):
+    buy_amount = buy_amount + length_buy_list_new[i]
+print ("Total Money spent on buying: ", buy_amount)
+
+net_profit = sell_amount - buy_amount
+rounded_net_profit = round(net_profit, 2)
+print ("Net Profit: $", rounded_net_profit)
 
 
 
@@ -101,21 +180,6 @@ print(bought_true_or_false)
 #plt.plot(voo[['Close', 'MID', 'UPPER', 'LOWER']])
 voo[['Close', 'MID', 'UPPER', 'LOWER']].plot(label = ticker_input, figsize=(20,10))
 plt.fill_between(voo.index, voo.UPPER, voo.LOWER, color = 'grey', alpha=0.3)
-plt.scatter(voo.iloc[buy_point_2].index, voo.iloc[buy_point_2].Close, marker = '^', color = 'green') #buy     -- Date Since start, Close Value 
-#INDEX OF BUY_POINT_2 AND BUY_POINT MUST BE THE SAME ----------------------------------------------------------------
-plt.scatter(voo.iloc[sell_point_2].index, voo.iloc[sell_point_2].Close, marker = '^', color = 'red') #sell
-#plt.scatter(voo.index[voo.BUY], voo[voo.BUY].Close, marker = '^', color = 'green') #buy
-#plt.scatter(voo.index[voo.SELL], voo[voo.SELL].Close, marker = '^', color = 'red') #sell
+plt.scatter(voo.iloc[length_buy_date_new].index, voo.iloc[length_buy_date_new].Close, marker = '^', color = 'green') #buy  
+plt.scatter(voo.iloc[length_sell_date_new].index, voo.iloc[length_sell_date_new].Close, marker = '^', color = 'red') #sell
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
