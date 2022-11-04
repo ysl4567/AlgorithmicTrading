@@ -25,11 +25,11 @@ alb_price_chart = px.line(alb['Close'],title= 'Daily Close Price',color_discrete
 alb_price_chart.show()
 
 #In project 1, we want to explore Moving Averages Algorithmic Trading
-#Short Moving Average. Set this equal to 5 days. Using close value.
-alb['ALB50'] = alb['Close'].rolling(50).mean()
+#Short Moving Average. Set this equal to 50 days. Using close value.
+alb['50'] = alb['Close'].rolling(50).mean()
 
-#Long Moving Average. Set this equal to 100 days. Uinsg close value
-alb['ALB200'] = alb['Close'].rolling(200).mean()
+#Long Moving Average. Set this equal to 200 days. Uinsg close value
+alb['200'] = alb['Close'].rolling(200).mean()
 print (alb)
 
 buy_list = []
@@ -38,11 +38,11 @@ bought = False
 
 
 for dates in range(len(alb)):
-    if bought == False and alb['ALB50'][dates] > alb['ALB200'][dates]:
+    if bought == False and alb['50'][dates] > alb['200'][dates]:
         if bought == False:
             buy_list.append(dates)
             bought = True
-    elif bought == True and alb['ALB50'][dates] < alb['ALB200'][dates]:
+    elif bought == True and alb['50'][dates] < alb['200'][dates]:
         if bought == True:
             sell_list.append(dates)
             bought = False
@@ -73,9 +73,18 @@ print ("Net gain: $", rounded_total_value)
 
 #Print on graph
 #Short Moving Average - better for day trading. Accounts for abnormalities. Long Moving Average - Better for long term. Does not account for abnormalities
-alb[['Close','ALB50', 'ALB200']].plot(label = ticker_input, figsize=(20,10))
+alb[['Close','50', '200']].plot(label = ticker_input, figsize=(20,10))
 #alb[['Close','ALB50']].plot(label = 'ALB', figsize=(20,10))
 #alb[['Close','ALB100']].plot(label = 'ALB', figsize=(20,10))
 plt.scatter(alb.iloc[buy_list].index, alb.iloc[buy_list].Close, marker = '^', color = 'green') #buy - select
 plt.scatter(alb.iloc[sell_list].index, alb.iloc[sell_list].Close, marker = '^', color = 'red') #sell - select
 plt.show()
+
+
+
+
+
+
+
+
+
