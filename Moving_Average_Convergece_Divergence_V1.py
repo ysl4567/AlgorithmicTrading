@@ -26,13 +26,13 @@ cat_price_chart.show()
 # Short: 12 Period Long: 26 Periods 
 
 #Short exponential moving average
-cat['CAT12-Short12'] = cat['Close'].ewm(span=12).mean()
+cat['Short12'] = cat['Close'].ewm(span=12).mean()
 #Long exponential moving average
-cat['CAT26-Long26'] = cat['Close'].ewm(span=26).mean()
+cat['Long26'] = cat['Close'].ewm(span=26).mean()
 
 #MACD 12 day EMA - 26 day EMA  
 #https://www.investopedia.com/terms/m/macd.asp#:~:text=The%20MACD%20line%20is%20calculated,for%20buy%20or%20sell%20signals.
-cat['MACD'] = cat['CAT12-Short12'] -cat['CAT26-Long26']  
+cat['MACD'] = cat['Short12'] -cat['ong26']  
 
 #Signal Line - 9 day MACD EMA Average
 #https://www.investopedia.com/terms/m/macd.asp#:~:text=The%20MACD%20line%20is%20calculated,for%20buy%20or%20sell%20signals.
