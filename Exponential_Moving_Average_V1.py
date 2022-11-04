@@ -12,10 +12,10 @@ ticker_input = input("Enter ticker without the $ symbol: ")
 
 #Albemarle Graph for 
 alb = yf.Ticker(ticker_input)
-print(alb.history(period="18mo"))
+print(alb.history(period="36mo"))
 
-#Graph ALB Closing price for the past 18 months
-alb = yf.download(ticker_input, period='18mo', Interval='1d') #print everyday on the graph 
+#Graph ALB Closing price for the past36 months
+alb = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
 alb_price_chart = pltex.line(alb['Close'],title='Albemarle Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 alb_price_chart.show()
 
@@ -58,14 +58,14 @@ print ("sell_close", sell_list_close_value)
 buy_total = 0
 for i in range(len(buy_list_close_value)):
     buy_total = buy_total + buy_list_close_value[i]
-print ("Total $ Earned: ", buy_total)
+print ("Total $ Used to Buy: ", buy_total)
 
 sell_total = 0
 for i in range(len(sell_list_close_value)):
-    sell_total = sell_total + buy_list_close_value[i]
-print ("Total $ Loss: ", sell_total)
+    sell_total = sell_total + sell_list_close_value[i]
+print ("Total $ Gained: ", sell_total)
 
-total_value = buy_total - sell_total
+total_value = sell_total - buy_total
 rounded_total_value = round(total_value,2)
 print ("Net gain: $", rounded_total_value)
 
