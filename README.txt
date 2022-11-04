@@ -1,8 +1,10 @@
-- All recorded profits and losses based on data as of November 3, 2022 9 pm
+- All recorded profits and losses based on data as of November 3, 2022 @ 9 pm
 
 - (Occidental Group) OXY and (Bank of America) BAC used as examples. Screenshots uploaded for each technical analysis
 
 - 36 month time period is an arbitrary period. Period can be changed accordingly.
+
+- Run all codeson VSCode on 'DeBug Python File' mode
 
 Code written in Visual Studio Code Python
 
@@ -38,7 +40,7 @@ Bollinger_Bands_V1.py
 Bollinger_Bands_V2.py
  - Goal: Alternating buy and sell points with no guarantee that all are profitable
  - Input any ticker symbol (ex. TQQQ, CAT) without the $ symbol.
- - Output represents the possible sell and buy points assuming user is alternating buying and selling.
+ - Output represents the possible sell and buy points assuming user is alternating buying and selling
 
 Bollinger_Bands_V3.py
  - Goal: Non-alternating buy and sell points with all being profitable
@@ -78,7 +80,6 @@ Bollinger_Bands_V4.py
   - Goal: Show MACD and Signal Line without any buy or sell points
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
   
- 
  Moving_Average_Convergence_Divergence_V2.py
   - 
  Moving_Average_Convergence_Divergence_V3.py
@@ -92,23 +93,28 @@ Bollinger_Bands_V4.py
   - 
  Money_Flow_Index_V3.py
   -
-  
-  
- 6. Relative Strength Index (RSI)
- 
- Relative_Strength_Index_V1.py
-  - Work in progrgress
- 
- 
- 7. Stochastic Oscillator 
+   
+ 6. Stochastic Oscillator 
  
  Stochastic_Oscillator_V1.py
+  -
+ Stochastic_Oscillator_V2.py
+  -
+ Stochastic_Oscillator_V3.py
+  -
+  
+ 7. Relative Strength Index (RSI)
+ 
+ Relative_Strength_Index_V1.py
+  - Work in progress...
  
  
  
 Currently working on: 
- 
+
+The way the current algorithm works to weed out non-profitable trades also weeds out profitable trades. Need to create a more efficient way to just weed out the non-profitable trades.
 Combining all technical analyses explored to produce a more accurate and optimal alternating buy-trade signal graph. 
+Fix Relative Strength Index.
 
 Next step:
 Create a stock price predictor using neural networks and machine learning to understand what technical analysis is most effective in a given situation.
