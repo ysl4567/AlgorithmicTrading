@@ -138,20 +138,6 @@ print ("=",alb.iloc[length_sell_list_new].index)
 print ("=",alb.iloc[length_buy_date_new])
 print ("=",alb.iloc[length_sell_list_new].Close)
 
-sell_amount = 0
-for i in range(len(length_sell_list_new)):
-    sell_amount = sell_amount + length_sell_list_new[i]
-print ("Total Money earned from selling: ", sell_amount)
-
-buy_amount = 0
-for i in range(len(length_buy_list_new)):
-    buy_amount = buy_amount + length_buy_list_new[i]
-print ("Total Money spent on buying: ", buy_amount)
-
-net_profit = sell_amount - buy_amount
-rounded_net_profit = round(net_profit, 2)
-print ("Net Profit: $", rounded_net_profit)
-
 
 #Print on graph
 #Short Moving Average - better for day trading. Accounts for abnormalities. Long Moving Average - Better for long term. Does not account for abnormalities
@@ -161,3 +147,12 @@ alb[['Close','ALB20', 'ALB50']].plot(label = ticker_input, figsize=(20,10))
 plt.scatter(alb.iloc[length_buy_date_new].index, alb.iloc[length_buy_date_new].Close, marker = '^', color = 'green') #buy - select
 plt.scatter(alb.iloc[length_sell_date_new].index, alb.iloc[length_sell_date_new].Close, marker = '^', color = 'red') #sell - select
 plt.show()
+
+
+
+
+
+
+
+
+
