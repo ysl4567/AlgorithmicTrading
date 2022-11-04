@@ -81,31 +81,40 @@ Bollinger_Bands_V4.py
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
   
  Moving_Average_Convergence_Divergence_V2.py
-  - 
+  - Goal: Show Close line and all possible alternating buy and sell points
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  Moving_Average_Convergence_Divergence_V3.py
-  -
+  - Goal: Show Close line and profitable and alternating buy and sell points
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
   
  5. Money Flow Index (MFI)
  
  Money_Flow_Index_V1.py
-  - 
+  - Goal: Show the upper line, lower line, and money flow line
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  Money_Flow_Index_V2.py
-  - 
+  - Goal: Show close line
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  Money_Flow_Index_V3.py
-  -
+  - Goal: Show close line with alternating and profitable buy and sell points
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
    
  6. Stochastic Oscillator 
  
  Stochastic_Oscillator_V1.py
-  -
+  - Goal: Show the upper line, lower line, and stochastic oscillator line
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  Stochastic_Oscillator_V2.py
-  -
+  - Goal: Show the upper line, lower line, stochastic oscillator line, and buy and sell points
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  Stochastic_Oscillator_V3.py
-  -
+  - Goal: Show alternating and profitable buy and sell points on close value graph
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
   
  7. Relative Strength Index (RSI)
  
  Relative_Strength_Index_V1.py
+  - Goal: Show the upper line, lower line, and relative strenth index line
   - Work in progress...
  
  
