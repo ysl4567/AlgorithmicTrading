@@ -117,6 +117,6 @@ Currently working on:
 Combining all technical analyses explored to produce a more accurate and optimal alternating buy trade signal graph. 
 
 Next step:
-Create a stock price predictor using neural networks and machine learning.
+Create a stock price predictor using neural networks and machine learning to understand what technical analysis is most effective in a given situation.
 
 
