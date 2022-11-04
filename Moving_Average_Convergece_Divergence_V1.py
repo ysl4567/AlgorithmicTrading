@@ -32,7 +32,7 @@ cat['Long26'] = cat['Close'].ewm(span=26).mean()
 
 #MACD 12 day EMA - 26 day EMA  
 #https://www.investopedia.com/terms/m/macd.asp#:~:text=The%20MACD%20line%20is%20calculated,for%20buy%20or%20sell%20signals.
-cat['MACD'] = cat['Short12'] -cat['ong26']  
+cat['MACD'] = cat['Short12'] -cat['Long26']  
 
 #Signal Line - 9 day MACD EMA Average
 #https://www.investopedia.com/terms/m/macd.asp#:~:text=The%20MACD%20line%20is%20calculated,for%20buy%20or%20sell%20signals.
