@@ -2,7 +2,7 @@
 
 - (Occidental Group) OXY and (Bank of America) BAC used as examples. Screenshots uploaded for each technical analysis
 
-- 36 month time period is an arbitrary period. Period can be changed accordingly.
+- Periods can be changed accordingly 
 
 - Run all codeson VSCode on 'DeBug Python File' mode
 
