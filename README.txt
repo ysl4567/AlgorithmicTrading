@@ -48,43 +48,30 @@ Bollinger_Bands_V3.py
 Bollinger_Bands_V4.py
  - Goal: Alternating buy and sell points with all being profitable
  - Input any ticker symbol (ex. TQQQ, CAT) without the $ symbol 
- - Still a work in progress
- - Won't work for all stocks
- 
+ - Eliminates all non-profitable transactions
  
  2. Simple Moving Average (SMA)
  
  Simple_Moving_Average_V1.py
   - Goal: Alternating buy and sell points with no guarantee that all are profitable
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
-  - Outputs for BAC and OXY are not net profitable and similar when compared to SMA
-  - Outputs are widely inaccurate.
-  - BAC, 36 month period: Net Gain: $7.26
-  - OXY, 36 month period: Net Gain: $-28.55
   
  Simple_Moving_average_V2.py
   - Goal: Show only profitable buy and sell points
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
-  - Both BAC and OXY are profitable
-  - BAC, 36 month period: Net Gain: $19.09
-  - OXY, 36 month period: Net Gain: $41.49
+
   
  3. Exponential Moving Average (EMA)
  
  Exponential_Moving_Average_V1.py
   - Goal: Alternating buy and sell points with no guarantee that all are profitable
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
-  - Outputs for BAC and OXY are not net profitable and similar when compared to SMA
-  - BAC, 36 month period: Net Gain: $12.01
-  - OXY, 36 month period: Net Gain: $-17.24
- 
+
  Exponential_Moving_Average_V2.py
   - Goal: Show only profitable buy and sell points
   - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
-  - BAC, 36 month period: Net Gain: 
-  - OXY, 36 month period: Net Gain: 
-  
-  
+
+
  4. Moving Average Convergence Divergence (MACD)
  
  Moving_Average_Convergence_Divergence_V1.py
@@ -94,16 +81,23 @@ Bollinger_Bands_V4.py
  
  Moving_Average_Convergence_Divergence_V2.py
   - 
+ Moving_Average_Convergence_Divergence_V3.py
+  -
   
  5. Money Flow Index (MFI)
  
  Money_Flow_Index_V1.py
-  
+  - 
+ Money_Flow_Index_V2.py
+  - 
+ Money_Flow_Index_V3.py
+  -
   
   
  6. Relative Strength Index (RSI)
  
  Relative_Strength_Index_V1.py
+  - Work in progrgress
  
  
  7. Stochastic Oscillator 
@@ -114,7 +108,7 @@ Bollinger_Bands_V4.py
  
 Currently working on: 
  
-Combining all technical analyses explored to produce a more accurate and optimal alternating buy trade signal graph. 
+Combining all technical analyses explored to produce a more accurate and optimal alternating buy-trade signal graph. 
 
 Next step:
 Create a stock price predictor using neural networks and machine learning to understand what technical analysis is most effective in a given situation.
