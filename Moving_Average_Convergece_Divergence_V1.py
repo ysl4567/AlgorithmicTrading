@@ -84,3 +84,11 @@ print ("Net gain: $", rounded_total_value)
 #Show on matplotlib graph
 cat[['MACD','Signal Line']].plot(label = ticker_input, figsize=(20,10))
 plt.show()
+
+
+
+
+
+
+
+ 
