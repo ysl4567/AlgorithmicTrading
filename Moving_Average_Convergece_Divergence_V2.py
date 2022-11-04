@@ -14,7 +14,7 @@ cat = yf.Ticker(ticker_input)
 print(cat.history(period="36mo"))
 
 #Graph CAT Closing price for the past 36 months
-cat = yf.download('CAT', period='36mo', Interval='1d') #print everyday on the graph 
+cat = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
 cat_price_chart = px.line(cat['Close'],title= 'Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 cat_price_chart.show()
 
@@ -55,8 +55,6 @@ for dates in range (len(cat)):
         if bought == True:
             sell_list.append(dates)
             bought = False
-print ("Buy", buy_list) #days since 
-print ("Sell", sell_list) #days since
 
 buy_list_close_value = []
 for close_values in range (len(buy_list)):
@@ -68,113 +66,23 @@ for close_values_two in range (len(sell_list)):
     sell_list_close_value.append(cat.iloc[sell_list[close_values_two]].Close)
 print ("sell_close", sell_list_close_value)
 
-print ("BUYBUY", buy_list)
-buy_list_date_value = buy_list 
-print ("buy_date", buy_list_date_value)
+buy_total = 0
+for i in range(len(buy_list_close_value)):
+    buy_total = buy_total + buy_list_close_value[i]
+print ("Total $ Used to Buy: ", buy_total)
 
-print ("SELLSELL", sell_list)
-sell_list_date_value = sell_list
-print ("sell_date", sell_list_date_value)
+sell_total = 0
+for i in range(len(sell_list_close_value)):
+    sell_total = sell_total + sell_list_close_value[i]
+print ("Total $ Gained: ", sell_total)
 
-
-length_buy_date_list = len(buy_list_date_value)
-length_sell_date_list = len (sell_list_date_value)
-length_buy_date_new = []
-length_sell_date_new = []
-
-
-if length_buy_date_list < length_sell_date_list:
-    for o in range (length_buy_date_list):
-        length_buy_date_new.append(buy_list_date_value[o])
-        length_sell_date_new.append(sell_list_date_value[o])
-
-elif length_buy_date_list > length_sell_date_list:
-    for i in range (length_sell_date_list):
-        length_buy_date_new.append(buy_list_date_value[i])
-        length_sell_date_new.append(sell_list_date_value[i])
-
-elif length_buy_date_list == length_sell_date_list:
-    for z in range (length_sell_date_list):
-        length_buy_date_new.append(buy_list_date_value[z])
-        length_sell_date_new.append(sell_list_date_value[z])
-
-
-length_buy_list = len(buy_list_close_value)
-length_sell_list = len(sell_list_close_value)
-length_sell_lits = len(sell_list_close_value)
-length_buy_list_new = []
-length_sell_list_new = []
-
-if length_buy_list > length_sell_list:
-    for l in range (length_sell_list):
-        length_buy_list_new.append(buy_list_close_value[l])
-        length_sell_list_new.append(sell_list_close_value[l])
-elif length_buy_list < length_sell_list:
-    for a in range (length_buy_list):
-        length_buy_list_new.append(buy_list_close_value[a])
-        length_sell_list_new.append(sell_list_close_value[a])
-elif length_buy_list == length_sell_list:
-    for z in range (length_sell_list):
-        length_buy_list_new.append(buy_list_close_value[z])
-        length_sell_list_new.append(sell_list_close_value[z])
-
-
-
-print ("sell_same_length",length_sell_list_new) #same length - 1
-print ("buy_same_length",length_buy_list_new) #same length - 1
-print ("buy_date_same_length", length_buy_date_new) #same length - 2 Dates
-print ("sell_date_same_length", length_sell_date_new) #same length - 2 Dates
-print (len(length_sell_list_new))
-print (len(length_buy_list_new))
-
-y = len(length_buy_list_new)
-x = 0
-
-while True:
-    print("x is", x)
-    if x >= len(length_buy_list_new):
-        break
-
-    if length_buy_list_new[x] > length_sell_list_new[x]:
-        length_buy_list_new.pop(x)
-        length_sell_list_new.pop(x)
-        length_sell_date_new.pop(x)
-        length_buy_date_new.pop(x)
-        
-    else:
-        x = x + 1 # when you keep 
-        
-print("Done!")
-print("sell",length_sell_list_new) #$ value
-print("buy",length_buy_list_new) #$value
-print ("sell date",length_sell_date_new)
-print ("buy date", length_buy_date_new)
-print ("=",cat.iloc[length_buy_date_new].index)
-print ("=",cat.iloc[length_sell_date_new].index)
-print ("=",cat.iloc[length_buy_list_new].index)
-print ("=",cat.iloc[length_sell_list_new].index)
-print ("=",cat.iloc[length_buy_date_new])
-print ("=",cat.iloc[length_sell_list_new].Close)
-
-sell_amount = 0
-for i in range(len(length_sell_list_new)):
-    sell_amount = sell_amount + length_sell_list_new[i]
-print ("Total Money earned from selling: ", sell_amount)
-
-buy_amount = 0
-for i in range(len(length_buy_list_new)):
-    buy_amount = buy_amount + length_buy_list_new[i]
-print ("Total Money spent on buying: ", buy_amount)
-
-net_profit = sell_amount - buy_amount
-rounded_net_profit = round(net_profit, 2)
-print ("Net Profit: $", rounded_net_profit)
+total_value = sell_total - buy_total
+rounded_total_value = round(total_value,2)
+print ("Net gain: $", rounded_total_value)
 
 
 #Show on matplotlib graph
-#cat[['MACD','Signal Line']].plot(label = ticker_input, figsize=(20,10))
-# need to get list equal to each other #----------------------------------------------------------------
 cat[['Close']].plot(label = ticker_input, figsize=(20,10))
-plt.scatter(cat.iloc[length_buy_date_new].index, cat.iloc[length_buy_date_new].Close, marker = '^', color = 'green') #buy - select
-plt.scatter(cat.iloc[length_sell_date_new].index, cat.iloc[length_sell_date_new].Close, marker = '^', color = 'red') #sell - select
+plt.scatter(cat.iloc[buy_list].index, cat.iloc[buy_list].Close, marker = '^', color = 'green') #buy - select
+plt.scatter(cat.iloc[sell_list].index, cat.iloc[sell_list].Close, marker = '^', color = 'red') #sell - select
 plt.show()
