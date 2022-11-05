@@ -6,7 +6,7 @@
 
 - Run all codeson VSCode on 'DeBug Python File' mode
 
-Code written in Visual Studio Code Python
+Code written in VSCode Python
 
 Install:
 numpy
