@@ -4,9 +4,9 @@
 
 - Periods can be changed accordingly 
 
-- Run all codeson VSCode on 'DeBug Python File' mode
+- Run all codes on VSCode on 'DeBug Python File' mode
 
-Code written in VSCode Python
+- Code written in VSCode Python
 
 Install:
 numpy
