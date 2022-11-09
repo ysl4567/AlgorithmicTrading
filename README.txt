@@ -1,5 +1,3 @@
-- All recorded profits and losses based on data as of November 3, 2022 @ 9 pm
-
 - (Occidental Group) OXY and (Bank of America) BAC used as examples. Screenshots uploaded for each technical analysis
 
 - Periods can be changed accordingly 
