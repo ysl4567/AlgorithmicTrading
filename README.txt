@@ -16,7 +16,7 @@ plotly
 datapane
 
 
-Type commands below in python to install necessary software (one by one)
+Type commands below in python to install necessary software (one by one) - Make sure brew and pip are downloaded first
 pip3 install numpy
 pip3 install pandas
 pip3 install matplotlib
