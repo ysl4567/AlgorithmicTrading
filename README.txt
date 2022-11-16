@@ -17,13 +17,13 @@ datapane
 
 
 Type commands below in python to install necessary software (one by one)
-pip install numpy
-pip install pandas
-pip install matplotlib
-pip intstall yfinance
-pip install seaborn
-pip install plotly
-pip install datapane
+pip3 install numpy
+pip3 install pandas
+pip3 install matplotlib
+pip3 intstall yfinance
+pip3 install seaborn
+pip3 install plotly
+pip3 install datapane
 
 File Descriptions
 
