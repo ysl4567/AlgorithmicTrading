@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import seaborn as sns
 import plotly.express as px
-import datapane as dp
+#import datapane as dp
 
 # Money Flow Index
 ticker_input = input("Enter ticker without the $ symbol: ")
