@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import seaborn as sns
 import plotly.express as px
-import datapane as dp
+#import datapane as dp
 
 #Bollinger(R) Bands developd by John Bollinger
 #https://www.iforex.in/education-center/bollinger-bands#:~:text=To%20calculate%20the%20upper%20Bollinger,is%20the%20lower%20Bollinger%20Band.
@@ -22,7 +22,7 @@ voo = yf.Ticker(ticker_input)
 print(voo.history(period="18mo"))
 
 #Graph VOO Closing price for the past 18 months
-voo = yf.download(ticker_input, period='18mo', Interval='1d') #print everyday on the graph - plotly.express
+voo = yf.download(ticker_input, period='18mo', interval ='1d') #print everyday on the graph - plotly.express
 voo_price_chart = px.line(voo['Close'],title= ticker_input + ' Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 voo_price_chart.show()
 
