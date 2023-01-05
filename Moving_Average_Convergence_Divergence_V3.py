@@ -176,7 +176,7 @@ print ("Net Profit: $", rounded_net_profit)
 # need to get list equal to each other #----------------------------------------------------------------
 cat[['Close']].plot(label = ticker_input, figsize=(20,10))
 plt.scatter(cat.iloc[length_buy_date_new].index, cat.iloc[length_buy_date_new].Close, marker = '^', color = 'green') #buy - select
-plt.scatter(cat.iloc[length_sell_date_new].index, cat.iloc[length_sell_date_new].Close, marker = '^', color = 'red') #sell - select
+plt.scatter(cat.iloc[length_sell_date_new].index, cat.iloc[length_sell_date_new].Close, marker = 'v', color = 'red') #sell - select
 plt.show()
 
 
