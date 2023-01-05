@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import seaborn as sns
 import plotly.express as px
-import datapane as dp
+#import datapane as dp
 
 # Money Flow Index
 ticker_input = input("Enter ticker without the $ symbol: ")
@@ -13,7 +13,7 @@ so = yf.Ticker(ticker_input)
 print(so.history(period="36mo"))
 
 #Graph mfi Closing price for the past 36 months
-so = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
+so = yf.download(ticker_input, period='36mo',interval='1d') #print everyday on the graph 
 so_price_chart = px.line(so['Close'],title= 'Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 so_price_chart.show()
 
