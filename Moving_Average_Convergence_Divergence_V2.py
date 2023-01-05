@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import seaborn as sns
 import plotly.express as px
-import datapane as dp
+#import datapane as dp
 
 #MACD Crossover - Uses the difference between Exponential Averages to determine the momentum and direction of the market 
 ticker_input = input("Enter ticker without the $ symbol: ")
@@ -14,7 +14,7 @@ cat = yf.Ticker(ticker_input)
 print(cat.history(period="36mo"))
 
 #Graph CAT Closing price for the past 36 months
-cat = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
+cat = yf.download(ticker_input, period='36mo', interval='1d') #print everyday on the graph 
 cat_price_chart = px.line(cat['Close'],title= 'Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 cat_price_chart.show()
 
