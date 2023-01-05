@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import seaborn as sbn
 import plotly.express as pltex
-import datapane as dp
+#import datapane as dp
 
 ticker_input = input("Enter ticker without the $ symbol: ")
 
@@ -15,7 +15,7 @@ alb = yf.Ticker(ticker_input)
 print(alb.history(period="36mo"))
 
 #Graph ALB Closing price for the past36 months
-alb = yf.download(ticker_input, period='36mo', Interval='1d') #print everyday on the graph 
+alb = yf.download(ticker_input, period='36mo', interval='1d') #print everyday on the graph 
 alb_price_chart = pltex.line(alb['Close'],title='Albemarle Daily Close Price',color_discrete_map={'Close':'gray'},width=1000, height=1000)
 alb_price_chart.show()
 
