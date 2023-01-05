@@ -13,7 +13,7 @@ matplotlib
 yfinance 
 seaborn
 plotly
-datapane
+datapane (not needed)
 
 
 Type commands below in python to install necessary software (one by one) - Make sure brew and pip are downloaded first
@@ -23,7 +23,7 @@ pip3 install matplotlib
 pip3 intstall yfinance
 pip3 install seaborn
 pip3 install plotly
-pip3 install datapane
+pip3 install datapane (not needed)
 
 File Descriptions
 
@@ -113,15 +113,21 @@ Bollinger_Bands_V4.py
  
  Relative_Strength_Index_V1.py
   - Goal: Show the upper line, lower line, and relative strenth index line
-  - Work in progress...
- 
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
+  
+ Relative_Strength_Index_V2.py
+  - Goal: Alternating buy and sell points with no guarantee that all are profitable
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
+
+ Relative_Strength_Index_V3.py
+  - Goal: Show close line with alternating and profitable buy and sell points
+  - Input any ticker symbol (ex.TQQQ, CAT) without the $ symbol
  
  
 Currently working on: 
 
 The way the current algorithm works to weed out non-profitable trades also weeds out profitable trades. Need to create a more efficient way to just weed out the non-profitable trades.
 Combining all technical analyses explored to produce a more accurate and optimal alternating buy-trade signal graph. 
-Fix Relative Strength Index.
 
 Next step:
 Create a stock price predictor using neural networks and machine learning to understand what technical analysis is most effective in a given situation.
